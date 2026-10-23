@@ -1,0 +1,359 @@
+/* Variables con colorimetria */
+:root {
+  --primary: #4f1cf5;
+  --primary-dark: #3a12c4;
+  --ink: #0f0e3a;
+  --muted: #6b68a8;
+  --border: #dcdcf0;
+  --bg: #f1f4fd;
+  --panel: #4a2be0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background: var(--bg);
+  min-height: 100dvh;
+  /* min-height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: var(--ink);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(60, 40, 180, 0.15);
+}
+
+/* Panel izquierdo */
+.hero {
+  position: relative;
+  background:
+    linear-gradient(160deg, rgba(92, 56, 240, 0.92), rgba(58, 30, 200, 0.96)),
+    repeating-linear-gradient(90deg, #6a4cf5 0 40px, #5a3de8 40px 80px);
+  color: #fff;
+  padding: 56px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 44px;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  bottom: -30%;
+  width: 120%;
+  height: 60%;
+  background: rgba(30, 15, 140, 0.35);
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+.brand-big {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.brand-big svg {
+  width: 84px;
+  height: 84px;
+}
+.brand-big h1 {
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+.brand-big p {
+  font-size: 20px;
+  line-height: 1.25;
+  margin-top: 8px;
+  font-weight: 400;
+}
+.features {
+  list-style: none;
+  display: grid;
+  gap: 22px;
+}
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.icon-box {
+  width: 62px;
+  height: 62px;
+  flex: none;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: grid;
+  place-items: center;
+}
+.icon-box svg {
+  width: 30px;
+  height: 30px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.features strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+.features span {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Panel derecho */
+.form-side {
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.brand-small {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 44px;
+}
+.brand-small svg {
+  width: 56px;
+  height: 56px;
+}
+.brand-small b {
+  display: block;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.brand-small small {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.2;
+  display: block;
+  margin-top: 4px;
+}
+h2 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+.sub {
+  color: var(--muted);
+  font-size: 22px;
+  margin: 6px 0 36px;
+}
+label.field-label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 58px;
+  padding: 0 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 24px;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.field:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 28, 245, 0.15);
+}
+.field svg {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  stroke: var(--muted);
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.field input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 18px;
+  color: var(--ink);
+  background: transparent;
+  min-width: 0;
+}
+.field input::placeholder {
+  color: var(--muted);
+}
+.toggle {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border-radius: 8px;
+}
+.toggle:focus-visible {
+  outline: 2px solid var(--primary);
+}
+.toggle svg {
+  stroke: var(--ink);
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -4px 0 26px;
+  font-size: 17px;
+}
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.remember input {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--primary);
+  border-radius: 6px;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.btn {
+  width: 100%;
+  height: 58px;
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(79, 28, 245, 0.3);
+  transition:
+    background 0.15s,
+    transform 0.1s;
+}
+.btn:hover {
+  background: var(--primary-dark);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:focus-visible {
+  outline: 3px solid rgba(79, 28, 245, 0.4);
+  outline-offset: 3px;
+}
+.btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0 26px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.no-account {
+  text-align: center;
+  color: var(--muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+.no-account a {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+/* @media (max-width: 860px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding: 40px 28px 56px;
+    gap: 32px;
+  }
+  .brand-big h1 {
+    font-size: 56px;
+  }
+  .form-side {
+    padding: 36px 28px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+} */
